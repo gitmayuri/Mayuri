@@ -1,0 +1,891 @@
+﻿@model OnlineEngagement.Models.ViewDetails
+
+
+@{
+    ViewBag.Title = "GetSessionDtl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;    
+}
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        StudentFdb();
+        ParentFdb();
+        CommtAndRating();
+        GetSessionDetails();
+
+        //StudentDetails();
+        //CDFDetails();
+        //ShadowDetails();
+        //SessionDetails();
+    });
+
+    function GetSessionDetails() {
+        debugger;
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetSessionDetails", "Session"))",
+            dataType: "JSON",
+            cache: false,
+            success: function (data) {
+              //Student Details
+            $('[id*=lblstdId]').text(data[0].Id);
+            $('[id*=lblfname]').text(data[0].FullName);
+            $('[id*=lblgender]').text(data[0].Gender);
+            $('[id*=lbldob]').text(ToJavaScriptDate(data[0].DOB));
+            $('[id*=lbladdress]').text(data[0].Address);
+            $('[id*=lblcity]').text(data[0].City);
+            $('[id*=lblpincode]').text(data[0].Pincode);
+            //CDf Details
+            $('[id*=lblCdfId]').text(data[0].CDFId);
+            $('[id*=lblcdfName]').text(data[0].CDFName);
+            $('[id*=lblcdfGender]').text(data[0].CDFGender);
+            $('[id*=lblcdfContact]').text(data[0].CDFContact);
+            $('[id*=lblcdfEmail]').text(data[0].CDFEmail);
+            $('[id*=lblcdfLevel]').text(data[0].CDFLevels);
+           
+            //Shadow Details
+            if (data[0].ShadowId == 0) {
+                $("#lblshdowmsg").text("Shadow CDF is not assign.");
+                $("#tblshadow").hide();
+            }
+            else {
+                $("#tblshadow").show();
+                $("#lblshdowmsg").hide();
+                $('[id*=lblshadowId]').text(data[0].ShadowId);
+                $('[id*=lblshadowName]').text(data[0].ShadowName);
+                $('[id*=lblshadowGender]').text(data[0].ShadowGender);
+                $('[id*=lblshadowContact]').text(data[0].ShadowContact);
+                $('[id*=lblshadowEmail]').text(data[0].ShadowEmail);
+                $('[id*=lblshadowLevel]').text(data[0].ShadowLevel);
+              }
+            
+               //Session Details
+               $('[id*=lblSessionDate]').text(ToJavaScriptDate(data[0].SessionDate));
+               $('[id*=lblSessionTime]').text(data[0].SesstionTime);
+               $('[id*=lblSessionAddress]').text(data[0].SesAddress);
+               $('[id*=lblSessionStatus]').text(data[0].SessionStatus);
+               $('[id*=lblSessionCdfResponse]').text(data[0].SesCDFResponce);
+            
+        },
+        error: function (data) {
+            responseText = jQuery.parseJSON(data.responseText);
+            alert(responseText.Message);
+
+        }
+    });
+    }
+
+    @*function StudentDetails() {
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetStudentDeailsByID", "Session"))",
+            dataType: "JSON",
+            cache: false,
+            success: function (data) {
+                $('[id*=lblstdId]').text(data[0].Id);
+                $('[id*=lblfname]').text(data[0].FullName);
+                $('[id*=lblgender]').text(data[0].Gender);
+                $('[id*=lbldob]').text(ToJavaScriptDate(data[0].DOB));
+                $('[id*=lbladdress]').text(data[0].Address);
+                $('[id*=lblcity]').text(data[0].City);
+                $('[id*=lblpincode]').text(data[0].Pincode);
+            },
+            error: function (data) {
+                responseText = jQuery.parseJSON(data.responseText);
+                alert(responseText.Message);
+
+            }
+        });
+    }*@
+
+    @*function CDFDetails() {
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetStudentCDFDeails", "Session"))",
+            dataType: "JSON",
+            cache: false,
+            success: function (data) {
+                $('[id*=lblCdfId]').text(data[0].CDFId);
+                $('[id*=lblcdfName]').text(data[0].CDFName);
+                $('[id*=lblcdfGender]').text(data[0].CDFGender);
+                $('[id*=lblcdfContact]').text(data[0].CDFContact);
+                $('[id*=lblcdfEmail]').text(data[0].CDFEmail);
+                $('[id*=lblcdfLevel]').text(data[0].CDFLevels);
+            },
+        });
+    }*@
+
+    @*function ShadowDetails() {
+        
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetStudentShadowDeails", "Session"))",
+            dataType: "JSON",
+            cache: false,
+            success: function (data) {
+               
+                if (data[0].message == "Shadow CDF is not assign.") {
+                    
+                    $('[id*=lblshdowmsg]').text(data[0].message);
+                    $("#tblshadow").hide();
+                }
+                else {
+                    $("#lblshdowmsg").hide();
+                    $('[id*=lblshadowId]').text(data[0].ShadowId);
+                    $('[id*=lblshadowName]').text(data[0].ShadowName);
+                    $('[id*=lblshadowGender]').text(data[0].ShadowGender);
+                    $('[id*=lblshadowContact]').text(data[0].ShadowContact);
+                    $('[id*=lblshadowEmail]').text(data[0].ShadowEmail);
+                    $('[id*=lblshadowLevel]').text(data[0].ShadowLevel);
+                }
+               
+            },
+        });
+    }*@
+
+    @*function SessionDetails() {
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetStudentSessionDeails", "Session"))",
+            dataType: "JSON",
+            cache: false,
+            success: function (data) {
+                $('[id*=lblSessionDate]').text(ToJavaScriptDate(data[0].SessionDate));
+                $('[id*=lblSessionTime]').text(data[0].SesstionTime);
+                $('[id*=lblSessionAddress]').text(data[0].SesAddress);
+                $('[id*=lblSessionStatus]').text(data[0].SessionStatus);
+                $('[id*=lblSessionCdfResponse]').text(data[0].SesCDFResponce);
+            },
+        });
+    }*@
+
+    function ToJavaScriptDate(value) {
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(value);
+        var dt = new Date(parseFloat(results[1]));
+        var dt1 = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+        return dt1;
+    }
+
+    $(function () {
+        
+        $("#btnviewfdb").click(function (e) {
+            @*var id =@Session["StdId"];*@
+            $('[id*=feedbackdiv]').hide();
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("GetUserQuesAnsDtlById", "Session"))",
+                dataType: "JSON",
+                //data: { id : id },
+                cache: false,
+                success: function (data) {
+                   
+                    ParentFdb();
+                    
+                    if (data.message == "1") {
+                       $("#btnviewfdb").hide();
+                       $('[id*=errormsgStd]').text("Does not have Student feedback...");
+                       $("#errormsgStd").show();
+                    }
+                    else {
+                        $("#btnviewfdb").show();
+                        $('[id*=feedbackdiv]').show();
+                        $('[id*=lblQid1]').text(data.qno1);
+                        $('[id*=lblQid2]').text(data.qno2);
+                        $('[id*=lblQid3]').text(data.qno3);
+                        $('[id*=lblQid4]').text(data.qno4);
+                        $('[id*=lblQid5]').text(data.qno5);
+                        $('[id*=lblQid6]').text(data.qno6);
+
+                        $('[id*=lblQues1]').text(data.questext1);
+                        $('[id*=lblQues2]').text(data.questext2);
+                        $('[id*=lblQues3]').text(data.questext3);
+                        $('[id*=lblQues4]').text(data.questext4);
+                        $('[id*=lblQues5]').text(data.questext5);
+                        $('[id*=lblQues6]').text(data.questext6);
+
+
+                        $('[id*=lblAns1]').text(data.anstext1);
+                        $('[id*=lblAns2]').text(data.anstext2);
+                        $('[id*=lblAns3]').text(data.anstext3);
+                        $('[id*=lblAns4]').text(data.anstext4);
+                        $('[id*=lblAns5]').text(data.anstext5);
+                        $('[id*=lblAns6]').text(data.anstext6);
+                    }
+                },
+                failure: function (responce) {
+                    responseText = jQuery.parseJSON(responce.responseText);
+                    //alert("Error");
+                    alert(responseText.Message);
+                }
+            });
+
+        });
+    });
+
+    function StudentFdb() {
+        $("#btnviewfdb").hide();
+        
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetUserQuesAnsDtlById", "Session"))",
+            dataType: "JSON",
+        //data: { id : id },
+        cache: false,
+        success: function (data) {
+                   
+            ParentFdb();
+                    
+            if (data.message == "1") {
+                //$("#btnviewfdb").hide();
+                $('[id*=errormsgStd]').text("Does not have Student feedback...");
+                $("#errormsgStd").show();
+            }
+            else {
+                $("#btnviewfdb").show();
+                $('[id*=feedbackdiv]').show();
+                $('[id*=lblQid1]').text(data.qno1);
+                $('[id*=lblQid2]').text(data.qno2);
+                $('[id*=lblQid3]').text(data.qno3);
+                $('[id*=lblQid4]').text(data.qno4);
+                $('[id*=lblQid5]').text(data.qno5);
+                $('[id*=lblQid6]').text(data.qno6);
+
+                $('[id*=lblQues1]').text(data.questext1);
+                $('[id*=lblQues2]').text(data.questext2);
+                $('[id*=lblQues3]').text(data.questext3);
+                $('[id*=lblQues4]').text(data.questext4);
+                $('[id*=lblQues5]').text(data.questext5);
+                $('[id*=lblQues6]').text(data.questext6);
+
+
+                $('[id*=lblAns1]').text(data.anstext1);
+                $('[id*=lblAns2]').text(data.anstext2);
+                $('[id*=lblAns3]').text(data.anstext3);
+                $('[id*=lblAns4]').text(data.anstext4);
+                $('[id*=lblAns5]').text(data.anstext5);
+                $('[id*=lblAns6]').text(data.anstext6);
+            }
+        },
+        failure: function (responce) {
+            responseText = jQuery.parseJSON(responce.responseText);
+            //alert("Error");
+            alert(responseText.Message);
+        }
+    });
+    }
+
+    function ParentFdb() {
+        $("#btnviewParentfdb").hide();
+         $.ajax({
+            type: "GET",
+            url: "@(Url.Action("GetParentFeedbackDtl", "Session"))",
+            dataType: "JSON",
+        cache: false,
+        success: function (data) {
+             if (data.message == "1") {
+                //$("#btnviewParentfdb").hide();
+                $('[id*=errormsgParent]').text("Does not have Parent feedback...");
+                $("#errormsgParent").show();
+            }
+             else {
+                 $("#btnviewParentfdb").show();
+                $('[id*=Parentfdbdiv]').show();
+                $('[id*=lblParentNm]').text(data.ParentName);
+                $('[id*=lblParentContactno]').text(data.ContactNo);
+                $('[id*=lblParentEmailId]').text(data.emailId);
+
+                $('[id*=lblQid1]').text(data.qno1);
+                $('[id*=lblQid2]').text(data.qno2);
+                $('[id*=lblQid3]').text(data.qno3);
+                $('[id*=lblQid4]').text(data.qno4);
+                $('[id*=lblQid5]').text(data.qno5);
+                $('[id*=lblQid6]').text(data.qno6);
+
+                $('[id*=lblQues1]').text(data.questext1);
+                $('[id*=lblQues2]').text(data.questext2);
+                $('[id*=lblQues3]').text(data.questext3);
+                $('[id*=lblQues4]').text(data.questext3);
+                $('[id*=lblQues5]').text(data.questext4);
+                $('[id*=lblQues6]').text(data.questext6);
+
+                $('[id*=lblAns1]').text(data.anstext1);
+                $('[id*=lblAns2]').text(data.anstext2);
+                $('[id*=lblAns3]').text(data.anstext3);
+                $('[id*=lblAns4]').text(data.anstext4);
+                $('[id*=lblAns5]').text(data.anstext5);
+                $('[id*=lblAns6]').text(data.anstext6);
+            
+            }
+        },
+        });
+    }
+
+
+    $(function () {
+        $("#btnviewParentfdb").click(function (e) {
+            $('[id*=Parentfdbdiv]').hide();
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("GetParentFeedbackDtl", "Session"))",
+                dataType: "JSON",
+                //data: { id: id },
+                cache: false,
+                success: function (data) {
+                   if (data.message == "1") {
+                        $("#btnviewParentfdb").hide();
+                        $('[id*=errormsgParent]').text("Does not have feedback");
+                        $("#errormsgParent").show();
+                    }
+                   else {
+                       $("#btnviewParentfdb").show();
+                       $('[id*=Parentfdbdiv]').show();
+
+                        $('[id*=lblParentNm]').text(data.ParentName);
+                        $('[id*=lblParentContactno]').text(data.ContactNo);
+                        $('[id*=lblParentEmailId]').text(data.emailId);
+
+                        $('[id*=lblQid1]').text(data.qno1);
+                        $('[id*=lblQid2]').text(data.qno2);
+                        $('[id*=lblQid3]').text(data.qno3);
+                        $('[id*=lblQid4]').text(data.qno4);
+                        $('[id*=lblQid5]').text(data.qno5);
+                        $('[id*=lblQid6]').text(data.qno6);
+
+                        $('[id*=lblQues1]').text(data.questext1);
+                        $('[id*=lblQues2]').text(data.questext2);
+                        $('[id*=lblQues3]').text(data.questext3);
+                        $('[id*=lblQues4]').text(data.questext3);
+                        $('[id*=lblQues5]').text(data.questext4);
+                        $('[id*=lblQues6]').text(data.questext6);
+
+                        $('[id*=lblAns1]').text(data.anstext1);
+                        $('[id*=lblAns2]').text(data.anstext2);
+                        $('[id*=lblAns3]').text(data.anstext3);
+                        $('[id*=lblAns4]').text(data.anstext4);
+                        $('[id*=lblAns5]').text(data.anstext5);
+                        $('[id*=lblAns6]').text(data.anstext6);
+                   }
+                },
+                error: function (response) {
+                    responseText = jQuery.parseJSON(response.responseText);
+                    alert(responseText.Message);
+
+                }
+            });
+        });
+    });
+   
+    $(function () {
+        $("#btnviewCmtRating").click(function (e) {
+            @*var id =@Session["StdId"];*@
+            $('[id*=commentDiv]').hide();
+            $.ajax({
+                type: "GET",
+                url: "@(Url.Action("FdbCommentAndRating", "Session"))",
+                dataType: "JSON",
+                //data: { id : id },
+                cache: false,
+                success: function (data) {
+                   if (data[0].message == "1") {
+                        $("#btnviewCmtRating").hide();
+                        $('[id*=errormsgcmt]').text("Does not have Comment & Rating...");
+                        $("#errormsgcmt").show();
+                    }
+                   else {
+                       $("#btnviewCmtRating").show();
+                        $('[id*=commentDiv]').show();
+                         $('[id*=lblcomment]').text(data[0].comment);
+                        if (data[0].rating == 1) {
+                            $('[id*=lblrating]').html('<img src="../image/1.jpg"/>');
+                        }
+                        else if (data[0].rating == 2) {
+                            $('[id*=lblrating]').html('<img src="../image/2.jpg"/>');
+                        }
+                        else if (data[0].rating == 3) {
+                            $('[id*=lblrating]').html('<img src="../image/3.jpg"/>');
+                        }
+                        else if (data[0].rating == 4) {
+                            $('[id*=lblrating]').html('<img src="../image/4.jpg"/>');
+                        }
+                        else if (data[0].rating == 5) {
+                            $('[id*=lblrating]').html('<img src="../image/5.jpg"/>');
+                        }
+                    }
+                },
+                failure: function (responce) {
+                    responseText = jQuery.parseJSON(responce.responseText);
+                    //alert("Error");
+                    alert(responseText.Message);
+                }
+            });
+        });
+    });
+
+    function CommtAndRating() {
+        $("#btnviewCmtRating").hide();
+        $.ajax({
+            type: "GET",
+            url: "@(Url.Action("FdbCommentAndRating", "Session"))",
+            dataType: "JSON",
+        //data: { id : id },
+        cache: false,
+        success: function (data) {
+             if (data[0].message == "1") {
+                 //$('[id*=commentDiv]').hide();
+                 //$("#btnviewCmtRating").hide();
+                 $('[id*=errormsgcmt]').text("Does not have Comment & Rating...");
+                 $("#errormsgcmt").show();
+            }
+             else {
+                 $("#btnviewCmtRating").show();
+                $('[id*=commentDiv]').show();
+                $('[id*=lblcomment]').text(data[0].comment);
+                if (data[0].rating == 1) {
+                    $('[id*=lblrating]').html('<img src="../image/1.jpg"/>');
+                }
+                else if (data[0].rating == 2) {
+                    $('[id*=lblrating]').html('<img src="../image/2.jpg"/>');
+                }
+                else if (data[0].rating == 3) {
+                    $('[id*=lblrating]').html('<img src="../image/3.jpg"/>');
+                }
+                else if (data[0].rating == 4) {
+                    $('[id*=lblrating]').html('<img src="../image/4.jpg"/>');
+                }
+                else if (data[0].rating == 5) {
+                    $('[id*=lblrating]').html('<img src="../image/5.jpg"/>');
+                }
+            }
+        },
+        failure: function (responce) {
+            responseText = jQuery.parseJSON(responce.responseText);
+            //alert("Error");
+            alert(responseText.Message);
+        }
+    });
+    }
+</script>
+
+<body class="sidebar-horizontal">
+    <div class="content">
+        <div class="widget-bg">
+            <div class="widget-body clearfix">
+                <div id="wrapper" class="wrapper">
+                    <div class="widget-list">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModalPopupUserFeedback" class="btn btn-info" id="btnviewfdb"><b>View Student Feedback</b></a>
+                                <div id="errormsgStd" style="text-align:center; font-size:initial;font-weight:bold;color:red;"></div>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModalPopupParentFeedback" class="btn btn-info" id="btnviewParentfdb" style="display:none;"><b>View Parent Feedback</b></a>
+                                <div id="errormsgParent" style="text-align:center; font-size:initial;font-weight:bold;color:red;"></div>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModalstdcmt" class="btn btn-info" id="btnviewCmtRating"><b>View Comment & Rating</b></a>
+                                <div id="errormsgcmt" style="text-align:center; font-size:initial;font-weight:bold;color:red;"></div>
+                            </div>
+                           
+                             @*<div class="col-md-5">
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModalPopupUserFeedback" class="btn btn-info" id="btnviewfdb"><b>View Student Feedback</b></a>&nbsp;
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModalPopupParentFeedback" class="btn btn-info" id="btnviewParentfdb" style="display:none;"><b>View Parent Feedback</b></a>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#myModalstdcmt" class="btn btn-info" id="btnviewCmtRating"><b>View Comment & Rating</b></a>
+                            </div>*@
+                           
+                             <div class="col-md-4">
+                                <p style="color:rgb(8, 53, 86);text-align:right; font-weight:bold; "> @Html.ActionLink("Back to List", "Index", "Home")</p>
+                            </div>
+                           
+                        </div>
+                        @*<div class="row">
+                            <div class="col-md-4" id="errormsgStd" style="text-align:center; font-size:initial;font-weight:bold;color:red;"></div>
+                            <div class="col-md-4" id="errormsgParent" style="text-align:center; font-size:initial;font-weight:bold;color:red;"></div>
+                            <div class="col-md-4" id="errormsgcmt" style="text-align:center; font-size:initial;font-weight:bold;color:red;"></div>
+                        </div>*@
+                        
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6 widget-holder">
+                                <div class="widget-bg" style="height: 459px;">
+                                    <div class="widget-body clearfix">
+                                        <div class="card card-outline-color-scheme" style="height: 420px;">
+                                            <div class="card-header">
+                                                <h5 class="card-title mt-0 mb-3">Student Details </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <table style="width:100%">
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.Id, new { id = "lblstdId" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.FullName, new { id = "lblfname" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> Gender</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.Gender, new { id = "lblgender" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>D.O.B</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.DOB, new { id = "lbldob" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Address</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.Address, new { id = "lbladdress" })</td>
+                                                        @*style="width:200px;display: inline-block;"*@
+                                                    </tr>
+                                                    <tr>
+                                                        <th>City</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.City, new { id = "lblcity" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Pin Code</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.Pincode, new { id = "lblpincode" })</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="card-footer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 widget-holder">
+                                <div class="widget-bg" style="height: 459px;">
+                                    <div class="widget-body clearfix">
+                                        <div class="card card-outline-color-scheme" style="height: 420px;">
+                                            <div class="card-header">
+                                                <h5 class="card-title mt-0 mb-3">Conducting CDF's Details </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                @*<div>
+                                                    <p style="color:red;text-align:center;">@Html.LabelFor(model => model.SessionDetailsModel.message, new { id = "lblcdfmsg" })</p>
+                                                </div>*@
+                                                <table style="width:100%" id="tblCDF">
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFId, new { id = "lblCdfId" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFName, new { id = "lblcdfName" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Gender</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFGender, new { id = "lblcdfGender" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Contact</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFContact, new { id = "lblcdfContact" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email-Id</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFEmail, new { id = "lblcdfEmail" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>CDF Level</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFLevels, new { id = "lblcdfLevel" })</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="card-footer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 widget-holder">
+                                <div class="widget-bg" style="height: 459px;">
+                                    <div class="widget-body clearfix">
+                                        <div class="card card-outline-color-scheme" style="height: 420px;">
+                                            <div class="card-header">
+                                                <h5 class="card-title mt-0 mb-3">Shadow Details </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div>
+                                                    <p style="color:red;text-align:center;">@Html.LabelFor(model => model.SessionDetailsModel.message, new { id = "lblshdowmsg" })</p>
+                                                </div>
+                                                <table style="width:100%;" class="shd3" id="tblshadow">
+
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFId, new { id = "lblshadowId" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFName, new { id = "lblshadowName" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Gender</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFGender, new { id = "lblshadowGender" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Contact</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFContact, new { id = "lblshadowContact" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Email-Id</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFEmail, new { id = "lblshadowEmail" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>CDF Level</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.CDFLevels, new { id = "lblshadowLevel" })</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div class="card-footer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 widget-holder">
+                                <div class="widget-bg" style="height: 459px;">
+                                    <div class="widget-body clearfix">
+                                        <div class="card card-outline-color-scheme" style="height: 420px;">
+                                            <div class="card-header">
+                                                <h5 class="box-title">Session Details </h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <table style="width:100%">
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.SessionDate, new { id = "lblSessionDate" })</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Time</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.SesstionTime, new { id = "lblSessionTime" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Address</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.SesAddress, new { id = "lblSessionAddress" })</td>
+                                                        @*style="width:200px;display: inline-block;"*@
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Status</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.SessionStatus, new { id = "lblSessionStatus" })</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>CDF Responce</th>
+                                                        <td>@Html.LabelFor(model => model.SessionDetailsModel.SesCDFResponce, new { id = "lblSessionCdfResponse" })</td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                            <div class="card-footer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*PopUp Model For Users Feedback*@
+            <div id="feedbackdiv" style="visibility:visible;">
+                <div class="modal modal-color-scheme fade bs-modal-lg-color-scheme" id="myModalPopupUserFeedback" role="dialog" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="margin:370px; top:-312px;">
+                            <div id="feedmodel"></div>
+                            <div class="modal-header text-inverse">
+                                <button id="btnclose" type="button" class="close" data-dismiss="modal" style="font-size:35px">
+                                    &times;
+                                </button>
+
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
+
+                                <h4 class="modal-title" style="text-align:center;">Users FeedBack</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text" style="margin-bottom:0.42857em;border:double;">
+
+                                    <table class="table" style="margin-top:-0.57143em;">
+                                        <tr>
+                                            <th style="font-size:15px;font:bold">QuesNo.</th>
+                                            <th style="font-size:15px;font:bold">Questions</th>
+                                            <th style="font-size:15px;font:bold">Answer</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.qno1, new { id = "lblQid1" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.questext1, new { id = "lblQues1" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.anstext1, new { id = "lblAns1" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.qno2, new { id = "lblQid2" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.questext2, new { id = "lblQues2" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.anstext3, new { id = "lblAns2" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.qno3, new { id = "lblQid3" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.questext3, new { id = "lblQues3" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.anstext3, new { id = "lblAns3" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.qno4, new { id = "lblQid4" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.questext4, new { id = "lblQues4" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.anstext4, new { id = "lblAns4" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.qno5, new { id = "lblQid5" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.questext5, new { id = "lblQues5" })</td>
+                                            <td><a><b>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.anstext5, new { id = "lblAns5" })/5</b></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.qno6, new { id = "lblQid6" })</td>
+                                            <td>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.questext6, new { id = "lblQues6" })</td>
+                                            <td><a><b>@Html.LabelFor(model => model.SPP_FBQuestionSetDtl.anstext6, new { id = "lblAns6" })/9</b></a></td>
+                                        </tr>
+                                    </table>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*PopUp Model For Parent Feedback*@
+            <div class="Parentfdbdiv" style="visibility:visible;">
+                <div class="modal modal-color-scheme fade bs-modal-lg-color-scheme" id="myModalPopupParentFeedback" role="dialog" style="display: none" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="margin:370px; top:-312px;">
+                            <div id="feedmodel"></div>
+                            <div class="modal-header text-inverse">
+                                <button id="btnclose" type="button" class="close" data-dismiss="modal" style="font-size:35px">
+                                    &times;
+                                </button>
+
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
+
+                                <h4 class="modal-title">Parent FeedBack</h4>
+                            </div>
+                            <hr />
+                            <div>
+                                <div class="card-body">
+                                    <p class="card-text" style="margin-bottom:0.42857em;border-color:black;border:double;">
+                                        <table class="table" align="center" style="margin-top:-0.57143em;">
+                                            <tr>
+                                                <th style="text-align:center;background-color:gold;">Parent Name</th>
+                                                <th style="text-align:center;background-color:gold;">Contact No.</th>
+                                                <th style="text-align:center;background-color:gold;">Email-Id</th>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center;background-color:yellowgreen;color:white;">@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.ParentName, new { id = "lblParentNm" })</td>
+                                                <td style="text-align:center;background-color:yellowgreen;color:white;">@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.ContactNo, new { id = "lblParentContactno" })</td>
+                                                <td style="text-align:center;background-color:yellowgreen;color:white;">@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.emailId, new { id = "lblParentEmailId" })</td>
+                                            </tr>
+                                        </table>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text" style="margin-bottom:0.42857em;border:double;">
+                                    <table class="table" style="margin-top:-0.57143em;">
+                                        <tr>
+                                            <th>QuesNo.</th>
+                                            <th>Questions</th>
+                                            <th>Answer</th>
+
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.qno1, new { id = "lblQid1" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.questext1, new { id = "lblQues1" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.anstext1, new { id = "lblAns1" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.qno2, new { id = "lblQid2" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.questext2, new { id = "lblQues2" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.anstext3, new { id = "lblAns2" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.qno3, new { id = "lblQid3" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.questext3, new { id = "lblQues3" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.anstext3, new { id = "lblAns3" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.qno4, new { id = "lblQid4" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.questext4, new { id = "lblQues4" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.anstext4, new { id = "lblAns4" })</td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.qno5, new { id = "lblQid5" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.questext5, new { id = "lblQues5" })</td>
+                                            <td><a><b>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.anstext5, new { id = "lblAns5" })/5</b></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.qno6, new { id = "lblQid6" })</td>
+                                            <td>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.questext6, new { id = "lblQues6" })</td>
+                                            <td><a><b>@Html.LabelFor(model => model.Parent_FBQuestionSetDtl.anstext6, new { id = "lblAns6" })/9</b></a></td>
+                                        </tr>
+                                    </table>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*PopUp Model For Comment And Rating*@
+            <div id="commentDiv" style="visibility:visible;">
+                <div class="modal modal-color-scheme fade bs-modal-lg-color-scheme" id="myModalstdcmt" role="dialog" style="display:none;" data-backdrop="static">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content" style="margin:370px; top:-312px;">
+                            <div id="feedmodel"></div>
+                            <div class="modal-header text-inverse">
+                                <button id="btnclose" type="button" class="close" data-dismiss="modal" style="font-size:35px">
+                                    &times;
+                                </button>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
+                                <h4 class="modal-title" style="text-align:center;">Comment And Rating</h4>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text" style="margin-bottom:0.42857em;border:double;">
+                                    <table class="table" style="margin-top:-0.57143em;">
+                                        <tr>
+                                            <th style="font-size:15px;font:bold">Comment</th>
+                                            <th style="font-size:15px;font:bold">Rating</th>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.LabelFor(model => model.CommentsAndRating.comment, new { id = "lblcomment" })</td>
+                                            <td>@Html.LabelFor(model => model.CommentsAndRating.rating, new { id = "lblrating" })</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+  
+
+
+

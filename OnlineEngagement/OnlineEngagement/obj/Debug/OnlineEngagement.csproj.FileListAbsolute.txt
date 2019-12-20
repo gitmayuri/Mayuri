@@ -1,0 +1,245 @@
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\ApplicationInsights.config
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\csc.exe
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\System.Collections.Immutable.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\System.Reflection.Metadata.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\vbc.exe
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\VBCSCompiler.exe
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\roslyn\VBCSCompiler.exe.config
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.dll.config
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.pdb
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Antlr3.Runtime.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\EntityFramework.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\EntityFramework.SqlServer.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Agent.Intercept.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.DependencyCollector.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Web.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.WindowsServer.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.ApplicationInsights.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Core.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Cookies.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Facebook.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Google.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.OAuth.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Twitter.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Web.Infrastructure.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Newtonsoft.Json.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Owin.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Helpers.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Mvc.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Optimization.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Razor.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Deployment.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Razor.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\WebGrease.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.DependencyCollector.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Web.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.WindowsServer.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.ApplicationInsights.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Helpers.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Mvc.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Optimization.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.Razor.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Deployment.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Razor.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Antlr3.Runtime.pdb
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Newtonsoft.Json.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\EntityFramework.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\EntityFramework.SqlServer.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Core.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Facebook.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Cookies.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.OAuth.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Google.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Twitter.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.csprojResolveAssemblyReference.cache
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.dll
+F:\ASP.NET\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.pdb
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\ApplicationInsights.config
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\csc.exe
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\System.Collections.Immutable.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\System.Reflection.Metadata.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\vbc.exe
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\VBCSCompiler.exe
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\VBCSCompiler.exe.config
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.dll.config
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.pdb
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Antlr3.Runtime.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.SqlServer.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Agent.Intercept.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.DependencyCollector.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Web.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.WindowsServer.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.ApplicationInsights.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Core.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Cookies.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Facebook.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Google.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.OAuth.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Twitter.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Web.Infrastructure.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Newtonsoft.Json.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Owin.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Helpers.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Mvc.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Optimization.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Razor.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Deployment.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Razor.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\WebGrease.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.DependencyCollector.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Web.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.WindowsServer.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.ApplicationInsights.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Newtonsoft.Json.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Helpers.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Mvc.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Optimization.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Razor.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Deployment.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Razor.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Antlr3.Runtime.pdb
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.SqlServer.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Core.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Facebook.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Cookies.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.OAuth.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Google.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Twitter.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.csprojResolveAssemblyReference.cache
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.dll
+D:\backup_Prachi\NewDashboardProjects\newOnlineEng\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.pdb
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\ApplicationInsights.config
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\csc.exe
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\System.Collections.Immutable.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\System.Reflection.Metadata.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\vbc.exe
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\VBCSCompiler.exe
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\roslyn\VBCSCompiler.exe.config
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.dll.config
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\OnlineEngagement.pdb
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Antlr3.Runtime.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.SqlServer.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.DependencyCollector.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Web.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.WindowsServer.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.ApplicationInsights.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Google.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Web.Infrastructure.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Newtonsoft.Json.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Owin.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Helpers.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Mvc.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Optimization.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Razor.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Deployment.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Razor.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\WebGrease.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.DependencyCollector.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.Web.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AI.WindowsServer.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.ApplicationInsights.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Newtonsoft.Json.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Helpers.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Mvc.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Optimization.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.Razor.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Deployment.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\System.Web.WebPages.Razor.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Antlr3.Runtime.pdb
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\EntityFramework.SqlServer.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Google.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.dll
+D:\Mayuri Rajule\Mayuri_New\31-10-2019OnlineEng\OnlineEngagement\OnlineEngagement\obj\Debug\OnlineEngagement.pdb

@@ -1,0 +1,465 @@
+﻿@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@
+<!DOCTYPE html>
+<html>
+<head>
+    @*<link rel="stylesheet" href="~/Content/pace.css">*@
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/demo/Dheya-icon.png">
+
+    <title>@ViewBag.Title Dheya Sheduling Dashbord</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="~/Content/vendors/material-icons/material-icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/vendors/mono-social-icons/monosocialiconsfont.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelementplayer.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/vendors/weather-icons-master/weather-icons.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/vendors/weather-icons-master/weather-icons-wind.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+    <!-- Head Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script type="text/javascript">
+        //debugger;
+        //$(document).ready(function () {
+        //debugger;
+        //$("ul[id*=listul] li").click(function () {
+        //    debugger;
+        //    alert("hii")
+        //        alert($(this).html()); 
+        //        // gets innerHTML of clicked li
+        //        alert($(this).text()); 
+        //        // gets text contents of clicked li
+        //    });
+        //}); 
+
+        //debugger;
+        //$(document).ready(function () {
+        //    alert("hiii")
+        //    $(".listul").click(function () {
+        //        $(".liIndex").removeClass("active");
+        //        // $(".tab").addClass("active"); // instead of this do the below 
+        //        $(this).addClass("active");
+        //    });
+        //});
+
+
+        //debugger;
+        //$(document).on('click', 'div', 'aside', 'nav', 'ul', 'li', function () {
+        //   alert("hello")
+        //    $(this).addClass('active').siblings().removeClass('active')
+        //})
+
+        //$(document).ready(function () {
+        //    alert("sdaas");
+
+        //$('#listul').on("click", "liIndex", function () {
+        //    alert("sdaas");
+        //        $('ul li').removeAttr('active');
+        //        $(this).addClass('active');
+        //    });
+       // });
+
+        
+        
+        function onclklblLogout()
+        {
+            var r = confirm("Do you want to Logout?");
+            if (r == true) {
+               
+                window.location.href = "@Url.Action("Logout", "Login")";
+              
+
+            } else {
+                txt = "You pressed Cancel!";
+            }
+        }
+     
+        </script>
+
+
+   
+    <style>
+      .active,.btn:hover
+        {           
+            background-color: #255;
+            color: white;
+           
+        }   
+     
+       
+    </style>
+</head>
+<body class="header-centered sidebar-horizontal">
+    <div id="wrapper" class="wrapper">
+        <!-- HEADER & TOP NAVIGATION -->
+        <nav class="navbar">
+            <div class="navbar-header">
+                <a href="~/Login/AdminLogin" class="navbar-brand text-center">
+                    <img class="logo-expand" alt="" src="~/Content/demo/Scheduling2.png">
+                </a>
+            </div>
+            <!-- Left Menu & Sidebar Toggle -->
+            @*<ul class="nav navbar-nav">
+                    <li class="sidebar-toggle">
+                        <a href="javascript:void(0)" class="ripple"><i class="material-icons list-icon">menu</i></a>
+                    </li>
+                </ul>*@
+
+            <!-- /.navbar-search -->
+            <div class="spacer"></div>
+           
+            <!-- /.navbar-right -->
+            <!-- User Image with Dropdown -->
+            @*<ul class="nav navbar-nav d-none d-lg-flex">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle ripple" data-toggle="dropdown"><i class="material-icons list-icon" data-toggle="tooltip" title="Notification" style="margin-right:0px;top:16px">event_available</i><span class="badge badge-pill bg-primary">9</span></a>
+                    <div class="dropdown-menu dropdown-left dropdown-card animated flipInY">
+                        <div class="card">
+                            <header class="card-header">
+                                New notifications <span class="mr-l-10 badge badge-border bg-primary">4</span>
+                            </header>
+                            <ul class="list-unstyled dropdown-list-group">
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">check</i> </span><span class="media-body"><span class="media-heading">Invitation accepted</span> <small>10.14.2016@2:30pm</small> <span class="media-content">Your invitation for Mars has been accepted ...</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex user--online thumb-xs"><img src="~/Content/demo/users/user3.jpg" class="rounded-circle" alt=""> </span><span class="media-body"><span class="media-heading">Steve Smith</span> <small>10.14.2016@2:30pm</small> <span class="media-content">I slowly updated my Behance with some recent projects ...</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">event_available</i> </span><span class="media-body"><span class="media-heading">To Do</span> <small>10.14.2016@2:30pm</small> <span class="media-content">Meeting with Nathan McCullum on Friday 8 AM ...</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">check</i> </span><span class="media-body"><span class="media-heading">Invitation accepted</span> <small>10.14.2016@2:30pm</small> <span class="media-content">Your invitation for Mars has been accepted ...</span></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>*@
+            <ul class="nav navbar-nav">
+                @*<li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle ripple" data-toggle="dropdown"></a>
+                    <div class="dropdown-menu dropdown-left dropdown-card dropdown-card-wide">
+                        <div class="card">
+                            <section class="card-header">
+                                New notifications <span class="badge badge-border bg-danger mr-l-10">4</span>
+                            </section>
+                            <ul class="list-unstyled dropdown-list-group">
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">check</i> </span><span class="media-body"><span class="media-heading">Invitation accepted</span> <small>10.14.2016@2:30pm</small> <span class="media-content">Your invitation for Mars has been accepted ...</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex user--online thumb-xs"><img src="~/Content/demo/users/user3.jpg" class="rounded-circle" alt=""> </span><span class="media-body"><span class="media-heading">Steve Smith</span> <small>10.14.2016@2:30pm</small> <span class="media-content">I slowly updated my Behance with some recent projects and finally added a case study for thus great project ...</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">event_available</i> </span><span class="media-body"><span class="media-heading">To Do</span> <small>10.14.2016@2:30pm</small> <span class="media-content">Meeting with Nathan McCullum on Friday 8 AM to discuss about an ongoing project ...</span></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="media"><span class="d-flex"><i class="material-icons list-icon">check</i> </span><span class="media-body"><span class="media-heading">Invitation accepted</span> <small>10.14.2016@2:30pm</small> <span class="media-content">Your invitation for Mars has been accepted ...</span></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>*@
+
+                <li class="dropdown" style="top:13px">
+                    <a>
+                        <label id="UserName" style="color:white" class="caret"></label>
+                    </a>@*<a href="~/Login/AdminLogin" id="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>*@
+                    <a href="#" id="logout" onclick="onclklblLogout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content-wrapper" >
+            <aside class="site-sidebar clearfix">
+                <nav class="sidebar-nav">
+                    <ul id="listul" class="nav in side-menu" >
+                        <li class="current-page menu-item-has-children" id="liIndex">
+                            <a href='@Url.Action("Index", "Home")' style="top:4px;"><i class="fas fa-desktop" style="font-size:24px;display:-webkit-inline-box;"></i><br><span class="btn"  >Dashboard</span></a>
+                            @*href="~/Home/Index"*@
+                        </li>
+                        <li class="current-page menu-item-has-children" >
+                            <a href='@Url.Action("GetStudentList", "Student")'  style="top:4px" ><i class="fas fa-universal-access" style="font-size:24px;display:-webkit-inline-box;"></i><br><span class="btn" >Assign CDF and Session</span></a>
+                            @*href="~/Student/GetStudentList"*@
+                        </li>                        
+                        <li class="current-page menu-item-has-children" >
+                            <a href='@Url.Action("StudentDetails", "studentdetails")' style="top:4px"><i class="fas fa-battery-three-quarters" style="font-size:24px;display:-webkit-inline-box;"></i><br><span class="btn">Status</span></a>
+                            @*href="~/studentdetails/StudentDetails"*@
+                        </li>
+                        <li class="current-page menu-item-has-children">
+                            <a href='@Url.Action("AuthCodeGeneration", "AuthCodeGeneration")' style="top:4px"><i class="fa fa-pencil-square" style="font-size:24px;display:-webkit-inline-box;"></i><br><span class="btn">Generate AuthCode</span></a>
+                            @*href="~/AuthCodeGeneration/AuthCodeGeneration"*@
+                        </li>
+                       
+                    </ul>
+                   
+                </nav>
+            </aside>
+            @*<div class="row page-title clearfix">
+                        <div class="page-title-left">
+                            <h5 class="mr-0 mr-r-5">Dashboard</h5>
+                            <p class="mr-0 text-muted d-none d-md-inline-block"><b>Scheduling</b></p>
+                        </div>
+                        <div class="page-title-right d-none d-sm-inline-flex">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="~/Home/Index">Dashboard</a>
+                                </li>
+                            </ol>
+                        </div>
+                </div>*@
+
+         
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+            <script src="~/Content/js/bootstrap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/jquery.form-validator.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelementplayer.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+            <script src="~/Content/vendors/charts/utils.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+            <script src="~/Content/vendors/charts/excanvas.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/1.1.1/mithril.js"></script>
+            <script src="~/Content/vendors/theme-widgets/widgets.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/clndr/1.4.7/clndr.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+            <script src="~/Content/js/theme.js"></script>
+            <script src="~/Content/js/custom.js"></script>
+            <!-- #region datatables files -->
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />          
+            <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+          
+             
+                   
+                 
+            <!-- #endregion -->
+            @*<!-- jQuery -->
+                <script src="~/Content/js/jquery.min.js"></script>
+                <!-- Bootstrap Core JavaScript -->
+                <script src="~/Content/js/bootstrap.min.js"></script>
+                <!-- Metis Menu Plugin JavaScript -->
+                <script src="~/Content/js/metisMenu.min.js"></script>
+                <!-- Custom Theme JavaScript -->
+                <script src="~/Content/js/startmin.js"></script>
+                <script src="~/Content/js/dataTables/jquery.dataTables.min.js"></script>
+                <script src="~/Content/js/dataTables/dataTables.bootstrap.min.js"></script>*@
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var id = '@Request.RequestContext.HttpContext.Session["AdminId"]';
+                    var UserId = '@Request.RequestContext.HttpContext.Session["ClientId"]'; 
+                    var Name = '@Request.RequestContext.HttpContext.Session["Name"]';
+                    $('#UserName').text(Name);
+                })
+
+                       
+                  //  alert("hiii")
+                    $(".listul").click(function () {
+                        $(".liIndex").removeClass("active");
+                        // $(".tab").addClass("active"); // instead of this do the below 
+                        $(this).addClass("active");
+                    });
+
+
+                $('#listul').on("click", "liIndex", function () {
+                    alert("sdaas");
+                        $('ul li').removeAttr('active');
+                        $(this).addClass('active');
+                    });
+                
+
+
+            </script>
+
+
+            @*<div id="wrapper">
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#8080804d;">
+                    <div class="navbar-header">
+                        <a href="#" style="color: #adabab;" class="active">
+                            <img src="~/Content/Images/dheya_logo.png" style="width:45%;" />
+                        </a>
+                        <a href="https://www.dheya.com/" style="color: #adabab;" class="active"><i class="fa fa-home fa-fw"></i> Website</a>
+                    </div>
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <ul class="nav navbar-nav navbar-left navbar-top-links">
+                            <li></li>
+                        </ul>
+                    <ul class="nav navbar-right navbar-top-links">
+                        <li class="dropdown navbar-inverse">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
+                                </a>
+                                @*<ul class="dropdown-menu dropdown-alerts">
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-comment fa-fw"></i> New Comment
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                                <span class="pull-right text-muted small">12 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-tasks fa-fw"></i> New Task
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                                <span class="pull-right text-muted small">4 minutes ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a class="text-center" href="#">
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>*@
+            @*</li>*@
+            @*<li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i></i>&nbsp;&nbsp;<label id="UserName"></label>&nbsp; <b class="caret"></b>
+                            <labe id="UserName"></labe>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                    <a href="~/ClientProfile/ClientProfile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                                </li>
+                            <li class="divider" style="margin: 6px;"></li>
+                            <li>
+                                <a href="~/Login/AdminLogin"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>*@
+            <!-- /.navbar-top-links -->
+            <!-- /.navbar-static-side -->
+            @*</nav>*@
+
+        </div>
+        <div class="content-wrapper">
+            <div>
+                @RenderBody()
+                <hr />
+            </div>
+        </div>
+        @*<footer class="footer text-center clearfix">2019©Dheya Career Mentors (India) Pvt.Ltd. </footer>*@
+
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

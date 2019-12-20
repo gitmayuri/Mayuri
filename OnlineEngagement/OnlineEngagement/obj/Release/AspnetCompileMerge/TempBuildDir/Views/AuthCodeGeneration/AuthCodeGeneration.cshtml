@@ -1,0 +1,220 @@
+﻿@model OnlineEngagement.Models.authCode
+
+@{
+    ViewBag.Title = "AuthCodeGeneration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>AuthCodeGeneration</h2>*@
+
+<style>
+.red-square {
+  left: 25%;
+  top: 223%;
+}         
+ </style>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        BindddlProduct();
+    });
+
+    function BindddlProduct()
+    {
+        $.ajax({
+            //  url: '/StudentList/BindState',
+            type: "GET",
+            url: "@(Url.Action("GetProductDetails", "AuthCodeGeneration"))",
+            dataType: "JSON",
+        //  data: { Pincode: Pincode },
+        cache: false,
+        success: function (data) {
+            var items = '<option>--Select--</option>';
+            $.each(data, function (i, product) {
+                items += "<option value='" + product.Value + "'>" + product.Text + "</option>";
+            });
+            $('#ddlProduct').html(items);
+        },
+        });
+    }
+    function CreateAuthCode()
+    {
+        debugger;
+        var ProductId= $("#ddlProduct option:selected").val();
+
+        if (ProductId == "--Select--" || ProductId == "") {
+            alert("Please Select Product....");
+            $("#ddlProduct option:selected").focus();
+            return false;
+        }
+
+        var createdfor = $("#txtCreatedFor").val();
+        if (createdfor == "") {
+            alert("Please Enter Valid Name.");
+            $('[id*=txtCreatedFor]').focus();
+            return false;
+        }
+        var NoOfCodes = $('[id*=txtNoOfCodes]').val();
+        if (NoOfCodes == "--Select--" || NoOfCodes == "") {
+            alert("Please enter no. of code");
+            $('[id*=txtNoOfCodes]').focus();
+            return false;
+        }
+        var validityInday = $("#txtValidityInDays").val();
+        if (validityInday == "") {
+            alert("Please enter no. of days.");
+            $('[id*=txtValidityInDays]').focus();
+            return false;
+        }
+        var comment = $("#txtComment").val();
+        if (comment == "") {
+            alert("Please enter commment.");
+            $('[id*=txtComment]').focus();
+            return false;
+        }
+        //var product = $("#ddlProduct option:selected").val()
+        //if (state == "--Select--" || state == "") {
+        //    alert("Please Select Product First....");
+        //    $("#ddlProduct option:selected").focus();
+        //    return false;
+        //}
+        
+        //var CreatedFor = $('[id*=txtCreatedFor]').val();
+        //if (CreatedFor == "") {
+        //    alert("Please Created For....");
+        //    $('[id*=txtCreatedFor]').focus();
+        //    return false;
+        //}
+        //var NoOfCodes = $('[id*=txtNoOfCodes]').val();
+        //if (NoOfCodes == "") {
+        //    alert("Please Select No Of Codes....");
+        //    $('[id*=txtNoOfCodes]').focus();
+        //    return false;
+        //}
+        //var ValidityInDays = $('[id*=txtValidityInDays]').val();
+        //if (ValidityInDays == "") {
+        //    alert("Please Select Validity In Days....");
+        //    $('[id*=txtValidityInDays]').focus();
+        //    return false;
+        //}
+        //var Comment = $('[id*=txtComment]').val();
+        //if (Comment == "") {
+        //    alert("Please Select Comment....");
+        //    $('[id*=txtComment]').focus();
+        //    return false;
+        //}
+      
+        $.ajax({      
+        type: 'POST',
+        url: "@(Url.Action("PostAuthCode", "AuthCodeGeneration"))",
+        dataType: 'json',
+        data: {
+            
+            ProductId: $("#ddlProduct option:selected").val(),
+            CreatedFor: $('[id*=txtCreatedFor]').val(),
+            NoOfCodes: $('[id*=txtNoOfCodes]').val(),
+            ValidityInDays: $('[id*=txtValidityInDays]').val(),
+            Comment: $('[id*=txtComment]').val()
+        },
+        cache: false,
+        success: function (response) {
+            debugger;
+            if (response.result == true) {
+                alert("AuthCode Generated Successfully...");
+                window.location.reload(true);
+            }
+            else{
+                alert("CDF And Session Not Assigned...");
+                window.location.reload(true);
+                //window.location = response.Url;
+            }
+            //alert(data);
+           // window.location.reload(true);
+               
+        },
+        error: function (response) {
+            responseText = jQuery.parseJSON(response.responseText);
+            alert(responseText.Message);
+
+        }
+    });
+    }
+
+</script>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @*<h4>authCode</h4>*@
+        <hr />
+        <div class="col-md-6 mr-b-30 red-square">
+            <div class="card card-default">
+                <div class="card-header" style="text-align:center;font-size:20px;background-color: rgb(8, 53, 86)">
+
+                    <h5 class="card-title mt-0 mb-3" style="text-align:center; color:white">Create Authorisation Codes</h5>
+                    @*<h6 class="card-subtitle">Sub title goes here with small font</h6>*@
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "col-md-3 col-form-label" })
+                            <div class="col-md-9">
+                                <select id="ddlProduct" name="ddlProduct" class="form-control" style="width:350px"></select>
+
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.CreatedFor, htmlAttributes: new { @class = "col-md-3 col-form-label" })
+                             <div class="col-md-9">
+                                @Html.EditorFor(model => model.CreatedFor, new { htmlAttributes = new {id= "txtCreatedFor", @class = "form-control" ,style="width:350px" } })
+                                @Html.ValidationMessageFor(model => model.CreatedFor, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.NoOfCodes, htmlAttributes: new {@class = "col-md-3 col-form-label" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.NoOfCodes, new { htmlAttributes = new { id = "txtNoOfCodes", @class = "form-control", style = "width:350px" } })
+                                @Html.ValidationMessageFor(model => model.NoOfCodes, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.ValidityInDays, htmlAttributes: new { @class = "col-md-3 col-form-label" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.ValidityInDays, new { htmlAttributes = new { id = "txtValidityInDays", @class = "form-control", style = "width:350px" } })
+                                @Html.ValidationMessageFor(model => model.ValidityInDays, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "col-md-3 col-form-label" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Comment, new { htmlAttributes = new {id= "txtComment", @class = "form-control", style = "width:350px" } })
+                                @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        
+                    </p>
+                </div>
+                <div class="card-footer">
+
+                    <div class="form-group row" style="text-align:center;font-size:20px;">
+                    <div class="col-md-9 ml-md-auto btn-list">
+                        <input type="submit" value="Create" class="btn btn-primary" onclick="javascript: return CreateAuthCode()" />
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

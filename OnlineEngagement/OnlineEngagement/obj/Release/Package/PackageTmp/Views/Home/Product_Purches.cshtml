@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "Product_Purches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    // Product Purchased Student List
+    $(document).on("click", "a[name='lnkViewProduct']", function (e) {
+        $.ajax({
+            url: '/Home/GetProductPurchaseStudent',
+            type: "GET",
+            dataType: "JSON",
+            success: function (UserDetail) {
+                var row = "", d;
+                $.each(UserDetail, function (i, d) {
+                    row += "<tr><td style='display:none'>" + d.Id + "</td><td>"
+                            + d.Name + "</td><td style='font-size:12px'>"
+                            + d.Gender + "</td><td style='font-size:12px'>"
+                            + ToJavaScriptDate(d.DOB) + "</td><td style='font-size:12px'>"
+                            + d.EmailId + "</td><td style='font-size:12px'>"
+                            + d.Contact + "</td><td style='font-size:12px'>"
+                            + d.Address + "</td><td style='font-size:12px'>"
+                            + d.City + "</td><td style='font-size:12px'>"
+                            + d.Pincode + "</td><td style='font-size:12px'>"
+                            //+ ToJavaScriptDate(d.RegDate) + "</td><td>"
+                            + d.ProductName + "</td><td style='font-size:12px'>"
+                            + d.ProPrice1 + "</td><td id='tdStatus' class='btn btn-success' style='margin-left:8px;margin-top:8px;width:73px;'>"
+                            + d.TestStatus + "</td><td style='display:none'></td></tr>";
+                });
+                $('#codedtl').html(row);
+                table = $('#dataTables-ProdPurchaseStud').DataTable({
+                    destroy: true,
+                    orderCellsTop: true,
+                    fixedHeader: true,
+                    responsive: true,
+                    "columnDefs": [{
+                        "targets": -1,
+                        "data": null
+                        // "defaultContent": "<a id='productDtl' class='btn btn-info' name='lnkViewCDFAssign' href='#' data-toggle='modal' data-target='#myModalAssignCDF' Style='color:black;'>Assign CDF</a>"
+                    }],
+                    "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                        if (aData[11] == "Complete") {
+
+                            //  $('thTest', nRow).css('background-color', 'Green');
+                            $('[id*=tdStatus]', nRow).css('background-color', '#008000c9');
+                        }
+                        else if (aData[11] == "InComplete") {
+
+                            $('[id*=tdStatus]', nRow).css('background-color', '#ff3b00c2');
+                            //$('thTest', nRow).css('background-color', 'Red');
+                        }
+                    }
+
+                });
+            }
+
+        });
+    })
+</script>
+<html>
+<head>    
+    <link rel="stylesheet" href="~/Content/pace.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/demo/Dheya-icon.png">
+
+    <link href="~/Content/vendors/material-icons/material-icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/vendors/mono-social-icons/monosocialiconsfont.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelementplayer.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Head Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+</head>
+<body>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+       <div class="widget-list">
+        <div class="row">
+            <div class="col-md-12 widget-holder">
+                <div class="widget-bg">
+                    <div class="widget-heading clearfix">
+                        <h5>Total Product Purchased Student List</h5>
+                    </div>
+                    <div class="widget-body clearfix">
+                        <table class="table table-striped table-responsive" data-toggle="datatables">
+                            <thead>
+                                <tr>
+                                    <th style="display:none">
+                                        Id
+                                    </th>
+                                    <th>
+                                        Name
+
+                                    </th>
+                                    <th>
+                                        Gender
+
+                                    </th>
+                                    <th>
+                                        D.O.B
+
+                                    </th>
+                                    <th>
+                                        Email Id
+
+                                    </th>
+                                    <th>
+                                        Mobile
+
+                                    </th>
+                                    <th>
+                                        Address
+
+                                    </th>
+
+                                    <th>
+                                        City
+
+                                    </th>
+
+                                    <th>
+                                        Pin Code
+
+                                    </th>
+
+                                    <th>
+                                        Product
+
+                                    </th>
+                                    <th>
+                                        Price
+
+                                    </th>
+                                    <th id="thTest">
+                                        Test Status
+                                    </th>
+                                    <th style="display:none;"></th>
+                                </tr>
+
+                            </thead>
+                            <tbody id="codedtl"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/jquery.form-validator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelementplayer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.7.0/metisMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.4/sweetalert2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/js/theme.js"></script>
+    <script src="~/Content/js/custom.js"></script>
+}
+</body>
+
+</html>
+
